@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cherif Biton Faride Ben SAKO : Portfolio</title>
+<meta name="description" content="Portfolio de Biton Faride Ben Cherif SAKO, étudiant en Licence 3 Statistique-Informatique à l'Université Nazi Boni. Projets en analyse de données, statistique spatiale et informatique.">
+<title>Biton Faride Ben Cherif SAKO : Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -33,11 +34,11 @@
   h1,h2,h3{font-family:'Source Serif 4',serif;font-weight:600;color:var(--navy);}
   .mono{font-family:'JetBrains Mono',monospace;}
   a{color:inherit;text-decoration:none;}
-  .wrap{max-width:880px;margin:0 auto;padding:0 1.5rem;}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 1.5rem;}
 
   /* ===== HEADER ===== */
   header{
-    background:var(--navy);
+    background:linear-gradient(120deg,#102342 0%,var(--navy) 58%,#1c426c 100%);
     color:#fff;
     padding:3.2rem 0 2.6rem;
     position:relative;
@@ -53,6 +54,9 @@
     opacity:.18;
   }
   .header-inner{position:relative; z-index:1;}
+  .site-nav{display:flex;justify-content:flex-end;gap:1.2rem;margin-bottom:2.4rem;font-size:.82rem;color:#dce6f5;}
+  .site-nav a{border-bottom:1px solid transparent;transition:border-color .15s,color .15s;}
+  .site-nav a:hover,.site-nav a:focus-visible{color:#fff;border-color:#ffd9b3;}
   .eyebrow{
     font-family:'JetBrains Mono',monospace;
     font-size:.78rem;
@@ -99,6 +103,11 @@
     background:rgba(220,100,20,.32);
   }
   .contact-pill svg{width:14px;height:14px;flex-shrink:0;}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:.65rem;margin-top:1.35rem;}
+  .hero-link{display:inline-flex;align-items:center;gap:.5rem;padding:.62rem 1rem;border-radius:8px;background:var(--accent);color:#fff;font-size:.86rem;font-weight:600;transition:background .15s,transform .15s;}
+  .hero-link:hover{background:#bd510d;transform:translateY(-1px);}
+  .hero-link.secondary{border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.08);color:#fff;}
+  .hero-link.secondary:hover{background:rgba(255,255,255,.16);}
 
   /* ===== SECTION GENERIC ===== */
   section{padding:3rem 0;}
@@ -216,7 +225,7 @@
     margin-bottom:1.1rem;
     transition:border-color .15s, box-shadow .15s;
   }
-  .project-card:hover{
+  .project-card:hover,.project-card:focus-within{
     border-color:var(--steel);
     box-shadow:0 4px 18px rgba(20,40,80,.07);
   }
@@ -295,6 +304,8 @@
   @media (max-width:600px){
     header h1{font-size:2rem;}
     .section-head h2{font-size:1.25rem;}
+    .site-nav{justify-content:flex-start;gap:.85rem;flex-wrap:wrap;margin-bottom:1.8rem;}
+    .project-top{flex-direction:column;gap:.35rem;}
   }
 </style>
 </head>
@@ -302,14 +313,21 @@
 
 <header>
   <div class="wrap header-inner">
+    <nav class="site-nav" aria-label="Navigation principale">
+      <a href="#profil">Profil</a><a href="#formation">Formation</a><a href="#competences">Compétences</a><a href="#projets">Projets</a>
+    </nav>
     <div class="eyebrow">Portfolio académique</div>
-    <h1>Cherif Biton SAKO</h1>
-    <p class="role">Étudiant en Licence 2 Statistique-Informatique — Université Nazi Boni, Bobo-Dioulasso. Aspirant ingénieur statisticien-économiste.</p>
+    <h1>Biton Faride Ben Cherif SAKO</h1>
+    <p class="role">Étudiant en Licence 3 Statistique-Informatique à l’Université Nazi Boni. Je mobilise la statistique, les outils informatiques et la visualisation pour transformer des données en analyses utiles.</p>
+    <div class="hero-actions">
+      <a class="hero-link" href="https://cherif-biton.github.io/rapport-stage-bcef-statistique-spatiale/" target="_blank" rel="noopener">Découvrir le rapport de stage ↗</a>
+      <a class="hero-link secondary" href="https://github.com/Cherif-Biton" target="_blank" rel="noopener">Voir mes dépôts GitHub ↗</a>
+    </div>
     <div class="contact-row">
-      <span class="contact-pill clickable" onclick="document.getElementById('contact').scrollIntoView()">
+      <a class="contact-pill clickable" href="#contact">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
         Tous les liens en bas ↓
-      </span>
+      </a>
       <span class="contact-pill">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1118 0z"/><circle cx="12" cy="10" r="3"/></svg>
         Bobo-Dioulasso, Burkina Faso
@@ -321,9 +339,9 @@
 <section class="wrap" id="profil">
   <div class="section-head"><span class="section-num">01</span><h2>Profil</h2></div>
   <div class="profil-text">
-    <p>La data, c'est bien plus qu'une série de chiffres : c'est un langage que peu de gens savent vraiment lire. Animé par une passion profonde pour l'analyse et la modélisation des données, je construis pas à pas les compétences qui me permettront de contribuer aux prises de décisions stratégiques des grandes institutions.</p>
-    <p>Mon ambition est de poursuivre mes études en <strong>ingénierie statistique et économie</strong> pour mettre la puissance des données au service de politiques plus éclairées, plus justes et plus efficaces.</p>
-    <blockquote>Chaque jeu de données est une opportunité de révéler ce qui est caché, et de transformer l'incertitude en clarté.</blockquote>
+    <p>Étudiant en <strong>troisième année de Licence Statistique-Informatique</strong> à l’Université Nazi Boni, je développe des compétences en analyse statistique, économétrie, bases de données et programmation. Mes projets universitaires et mon expérience de stage m’ont permis de travailler sur des données réelles, de leur préparation jusqu’à la restitution des résultats.</p>
+    <p>Je m’intéresse particulièrement à la <strong>statistique appliquée, à l’analyse spatiale et à la valorisation des données</strong>. Je souhaite poursuivre mon parcours vers l’ingénierie statistique et économique.</p>
+    <blockquote>Analyser les données avec rigueur pour éclairer les décisions.</blockquote>
   </div>
 </section>
 
@@ -331,6 +349,11 @@
   <div class="section-head"><span class="section-num">02</span><h2>Parcours académique</h2></div>
   <div class="timeline">
     <div class="t-item current">
+      <div class="t-year">2026 — 2027</div>
+      <div class="t-title">Licence 3 — Statistique-Informatique</div>
+      <div class="t-place">Université Nazi Boni, Bobo-Dioulasso</div>
+    </div>
+    <div class="t-item">
       <div class="t-year">2025 — 2026</div>
       <div class="t-title">Licence 2 — Statistique-Informatique</div>
       <div class="t-place">Université Nazi Boni, Bobo-Dioulasso</div>
@@ -393,7 +416,22 @@
 </section>
 
 <section class="wrap" id="projets">
-  <div class="section-head"><span class="section-num">04</span><h2>Projets académiques majeurs</h2></div>
+  <div class="section-head"><span class="section-num">04</span><h2>Projets et expérience</h2></div>
+
+  <div class="project-card">
+    <div class="project-top">
+      <div class="project-title">Stage BCEF : Statistique spatiale et accès à l’eau</div>
+      <span class="badge-progress">Juillet — septembre 2026</span>
+    </div>
+    <div class="project-tools">
+      <span class="tool-chip">R</span><span class="tool-chip">QGIS</span><span class="tool-chip">Stata</span><span class="tool-chip">SIG</span><span class="tool-chip">Statistique spatiale</span>
+    </div>
+    <p class="project-desc">Étude appliquée de l’accès à l’eau au Burkina Faso à partir des microdonnées DHS/EDS 2021. Le travail mobilise le krigeage ordinaire et l’indice de Moran, puis présente les résultats dans un rapport et une présentation de transfert de connaissances.</p>
+    <a class="project-cta" href="https://cherif-biton.github.io/rapport-stage-bcef-statistique-spatiale/" target="_blank" rel="noopener">
+      Consulter le rapport et la présentation
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+    </a>
+  </div>
 
   <div class="project-card">
     <div class="project-top">
@@ -411,7 +449,7 @@
 
   <div class="project-card">
     <div class="project-top">
-      <div class="project-title">Satisfaction étudiante — régression logistique</div>
+      <div class="project-title">Satisfaction étudiante : régression logistique</div>
     </div>
     <div class="project-tools">
       <span class="tool-chip">Stata</span><span class="tool-chip">LaTeX</span><span class="tool-chip">Régression logistique binaire</span>
